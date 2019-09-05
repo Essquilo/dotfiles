@@ -23,8 +23,34 @@ xkb_symbols "de" {
 };
 
 xkb_symbols "vim" {
-    key <AC06> {[   NoSymbol, NoSymbol, Left                ]}; # h
-    key <AC07> {[   NoSymbol, NoSymbol, Down                ]}; # j
-    key <AC08> {[   NoSymbol, NoSymbol, Up                  ]}; # k
-    key <AC09> {[   NoSymbol, NoSymbol, Right               ]}; # l
+    # vi: set ft=sh:
+
+xkb_symbols "general" {
+    include "tweak(vim)"
+};
+
+xkb_symbols "en" {
+    include "us"
+    include "tweak(general)"
+    name[Group1]= "English (US)";
+};
+
+xkb_symbols "ru" {
+    include "ru(winkeys)"
+    include "tweak(general)"
+    name[Group1]= "Russian (RU)";
+};
+
+xkb_symbols "de" {
+    include "de"
+    include "tweak(general)"
+    name[Group1]= "German (DE)";
+};
+
+xkb_symbols "vim" {
+    key <CAPS> {actions[Group1]=[SetControls(controls=overlay1)]};
+    key <AC06> {overlay1=<LEFT>}; // h
+    key <AC09> {overlay1=<RGHT>}; // l
+    key <AC08> {overlay1=<UP>  }; // k
+    key <AC07> {overlay1=<DOWN>}; // j
 };
