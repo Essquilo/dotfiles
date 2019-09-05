@@ -1,0 +1,1 @@
+setxkbmap -layout "tweak(en),tweak(ru),tweak(de)" -option "lv3:caps_switch" -print | xkbcomp -I"$HOME/.config/xkb" - "${DISPLAY%%.*}" -w0
