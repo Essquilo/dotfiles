@@ -23,31 +23,6 @@ xkb_symbols "de" {
 };
 
 xkb_symbols "vim" {
-    # vi: set ft=sh:
-
-xkb_symbols "general" {
-    include "tweak(vim)"
-};
-
-xkb_symbols "en" {
-    include "us"
-    include "tweak(general)"
-    name[Group1]= "English (US)";
-};
-
-xkb_symbols "ru" {
-    include "ru(winkeys)"
-    include "tweak(general)"
-    name[Group1]= "Russian (RU)";
-};
-
-xkb_symbols "de" {
-    include "de"
-    include "tweak(general)"
-    name[Group1]= "German (DE)";
-};
-
-xkb_symbols "vim" {
     key <CAPS> {actions[Group1]=[SetControls(controls=overlay1)]};
     key <AC06> {overlay1=<LEFT>}; // h
     key <AC09> {overlay1=<RGHT>}; // l
